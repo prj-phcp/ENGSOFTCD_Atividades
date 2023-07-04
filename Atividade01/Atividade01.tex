@@ -1,0 +1,155 @@
+\documentclass[10pt, a4paper]{article}
+%\usepackage[english]{babel}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{lipsum}
+
+% code
+\usepackage{pythonhighlight}
+\renewcommand{\lstlistingname}{Anexo} % Listing->Code
+\usepackage{adjustbox}
+
+% For subfigure use
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+
+% tabelas
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{float}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+
+
+\begin{document}
+
+\def\TITLE{Atividade 01}
+\def\DISCIPLINE{INF 2137 - Engenharia de software para ciência de dados}
+\def\PROFESSOR{Marcos Kalinowski}
+\def\AUTHOR{Pedro Henrique Cardoso Paulo}
+\def\CONTACT{pedrorjpaulo.phcp@gmail.com}
+\def\DATE{abril, 2023}
+
+\title{\textbf{\TITLE} \\ \DISCIPLINE}
+\author{\AUTHOR}
+\date{\DATE}
+
+\begin{titlepage}
+      \begin{center}
+          \vspace*{1cm}
+
+          \Huge
+          \textbf{\TITLE}
+
+          \vspace{0.5cm}
+          \LARGE
+          \DISCIPLINE
+
+          \vspace{1.5cm}
+
+          \textbf{\AUTHOR \\ {\tt \CONTACT}}
+
+          \vfill
+          Professor: \PROFESSOR
+
+          \vspace{0.8cm}
+
+          \includegraphics[width=0.2\textwidth]{../general/puc.jpg}
+
+          \Large
+          Departamento de Engenharia Mecânica\\
+          PUC-RJ Pontifícia Universidade Católica do Rio de Janeiro\\
+          \DATE
+
+      \end{center}
+  \end{titlepage}
+
+\maketitle
+
+\section{Introdução}
+
+Esta tarefa tem por objetivo exercitar as competências de especificação de softwares nteligentes usando a metodologia do PerSpecML.
+
+\section{Enunciado}
+
+\subsection{Contexto}
+
+Uma empresa fornece uma solução de marketplace em que diferentes anunciantes (sellers) podem anunciar seus produtos para venda. Como diferentes tipos de 
+produtos requerem diferentes informações cadastrais (por exemplo, camisas possuem informações como material, tamanho e cor, enquanto telefones celulares possuem 
+informações como processador, espaço de armazenamento, capacidade da bateria, entre outros), a empresa deseja implementar uma classificação automática dos tipos 
+de produtos com base nos títulos dos anúncios utilizando aprendizado de máquina. Desta forma, ela será capaz de apresentar para o anunciante os formulários 
+apropriados para o cadastro das informações detalhadas, maximizando as chances de venda.
+
+A empresa acredita que com essa classificação automática e a consequente melhoria das informações cadastrais ela será capaz de aumentar as vendas do marketplace em 
+5\%. Os usuários esperam poder realizar o cadastro de forma prática, sem complicações de classificação manual. Do ponto de vista mais técnico, espera-se que o 
+modelo de aprendizado de máquina tenha uma acurácia de pelo menos 80\% na classificação. Além disso, devido ao grande volume de anunciantes, o modelo deverá ser 
+capaz de processar pelo menos 10.000 requisições por minuto.
+
+\subsection{User Story}
+
+\textbf{Como} anunciante do marketplace \textbf{quero} obter um formulário com as informações cadastrais corretas a partir do título do meu produto 
+\textbf{para} poder cadastrar o produto de forma precisa, maximizando as chances de venda.
+
+\subsection{Tarefa}
+
+Realize a especificação utilizando o template da técnica PerSpecML do Miro disponível neste  \href{https://miro.com/miroverse/perspecml-machine-learning/}{link}. 
+Como resolução da tarefa no ambiente, poste um PDF com um link para a sua cópia do board do Miro. Opcionalmente, inclua no PDF qualquer outra informação que julgar 
+pertinente, como, por exemplo, feedback sobre a aplicação da técnica.
+
+\section{Solução}
+
+\subsection{Link}
+
+\begin{itemize}
+    \item \href{https://miro.com/app/board/uXjVMUQCfBQ=/}{Link para o Miro com a resolução}
+\end{itemize}
+
+\subsection{Premissas addotadas e pontos relevantes}
+
+\begin{itemize}
+    \item Como não houve requisito explícito de tempo máximo para inferência, foi adotado 5 segundos. O requisito de 10000 operações por minuto foi explicitado também,\ 
+    mas este pode ser compensado por meio da paralelização do serviço em múltiplos conteineres.
+    \item Foi entendido pela explicação da tarefa que o sistema seria \textit{forceful} e que sertia mais danoso para o usuário ter ma predição errada do que uma não\
+    predição. Dessa forma, isso foi explicitado no quadro.
+    \item Para garantir algum nível de \textit{feedback} dos cadastradores, assumiu-se que eles teriam uma opção de ignorar a saída do sistema e ir para um formulário\
+    genérico. Pelos motivos explicitados na explicação (muitas categorias), eles não poderiam reclassificar manualmente.
+    \item Como o marketplace fica aberto à compradores, assumiu-se que compradores poderiam dar o feedback sobre a classificação feita.
+    \item Como não sabemos se o marketplace contrata contêineres na nuvem ou usa servidores próprios, ambas as opções foram explicitadas.
+\end{itemize}
+
+\subsection{Impressões gerais sobre a técnica}
+
+\begin{itemize}
+    \item A aplicação da técnica foi bem bacana pois dá espaço para assuntos bem focados na especificação para softwares inteligentes. Normalmente quando se usa dinâmicas\
+    mais genéricas como um \textit{lean canvas} simples, o espaço para divergêncas é muito grande. Para fases em que já se definiu que o produto será uma solução digital\
+    focada em ML, a dinâmica é muito boa.
+    \item A separação dos tópicos parece ajudar especialistas de cada área a se acharem e contribuir. Pessoalmente, ficou fácil achar os tópicos que eu tinha mais domínio
+    \item Não parece ser uma dinâmica fácil de fazer se não tiver um bom grupo envolvido. Pelo próprio exercício, em que fazemos sozinhos, fica evidente que falta a\
+    presença de mais gente que conheça do problema para detalhar algumas áreas.
+\end{itemize}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+\bibliography{export}
+
+\end{document}
