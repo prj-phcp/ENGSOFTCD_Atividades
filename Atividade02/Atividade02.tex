@@ -1,0 +1,124 @@
+\documentclass[10pt, a4paper]{article}
+%\usepackage[english]{babel}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+\usepackage{lipsum}
+
+% code
+\usepackage{pythonhighlight}
+\renewcommand{\lstlistingname}{Anexo} % Listing->Code
+\usepackage{adjustbox}
+
+% For subfigure use
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+
+% Set page size and margins
+% Replace `letterpaper' with`a4paper' for UK/EU standard size
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=2cm]{geometry}
+
+% tabelas
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{float}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+
+
+\begin{document}
+
+\def\TITLE{Atividade 02}
+\def\DISCIPLINE{INF 2137 - Engenharia de software para ciência de dados}
+\def\PROFESSOR{Marcos Kalinowski}
+\def\AUTHOR{Pedro Henrique Cardoso Paulo}
+\def\CONTACT{pedrorjpaulo.phcp@gmail.com}
+\def\DATE{julho, 2023}
+
+\title{\textbf{\TITLE} \\ \DISCIPLINE}
+\author{\AUTHOR}
+\date{\DATE}
+
+\begin{titlepage}
+      \begin{center}
+          \vspace*{1cm}
+
+          \Huge
+          \textbf{\TITLE}
+
+          \vspace{0.5cm}
+          \LARGE
+          \DISCIPLINE
+
+          \vspace{1.5cm}
+
+          \textbf{\AUTHOR \\ {\tt \CONTACT}}
+
+          \vfill
+          Professor: \PROFESSOR
+
+          \vspace{0.8cm}
+
+          \includegraphics[width=0.2\textwidth]{../general/puc.jpg}
+
+          \Large
+          Departamento de Engenharia Mecânica\\
+          PUC-RJ Pontifícia Universidade Católica do Rio de Janeiro\\
+          \DATE
+
+      \end{center}
+  \end{titlepage}
+
+\maketitle
+
+\section{Introdução}
+
+Esta tarefa tem por objetivo realizar um pequeno projeto de software inteligente usando as boas práticas aprendidas no curso.
+
+\section{Enunciado}
+
+\subsection{Tarefa}
+
+Escolha uma base de dados para um problema de classificação ou regressão. Sugere-se usar uma das bases de dados disponibilizada no UCI 
+Machine Learning Repository ou no Kaggle. Você deverá trabalhar desde o problema até os resultados e necessariamente comparar e 
+otimizar os hiperparâmetros para mais de um modelo.
+
+Lembre-se das etapas para implementação de projetos de ciência de dados, apresentadas em sala de aula, e trabalhe com 
+esta base de dados no ambiente Google Colab, utilizando Python e a biblioteca Scikit-Learn. Produza um notebook que servirá 
+como relatório, descrevendo textualmente cada uma das etapas do seu código. Para a definição do problema, descreva uma user story 
+e seu detalhamento (simplificado – não é necessário utilizar o template de especificação da atividade anterior, já que é um toy problem 
+e não um projeto industrial), na primeira célula do notebook. Para a implementação, sugere-se utilizar as boas práticas de programação 
+orientada a objetos trabalhadas em sala.
+
+Na última célula, informe como você implantaria a solução de forma a disponibilizar o resultado do seu modelo para o usuário final.
+
+\subsection{User Story}
+
+\textbf{Como} engenheiro de reservatório \textbf{quero} prever a produção de óleo de um poço baseado em seu histórico 
+\textbf{para} tomar decisões de priorização e cumprir obrigações legais.
+
+\section{Solução}
+
+\subsection{Link}
+
+\begin{itemize}
+    \item \href{https://github.com/prj-phcp/ENGSOFTCD_Atividades/tree/master/Atividade02}{Pasta geral com o conteúdo e dataset}
+    \item \href{https://github.com/prj-phcp/ENGSOFTCD_Atividades/blob/master/Atividade02/Atividade02.ipynb}{Notebook com entrega final}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+\bibliography{export}
+
+\end{document}
