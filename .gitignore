@@ -8,4 +8,5 @@
 *.gz
 *.fls
 *.gz
+*.abs
 *__pycache__*
